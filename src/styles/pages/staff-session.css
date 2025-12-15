@@ -1,0 +1,40 @@
+.staff-session-content {
+  flex: 1;
+  padding: 24px;
+  background-color: #ffffff;
+  /* Chiều cao giới hạn theo viewport trừ phần header */
+  height: calc(100vh - 72px);
+  overflow-y: auto;
+}
+  
+  .staff-session-header {
+    margin-bottom: 24px;
+  }
+  
+  .staff-session-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+  }
+  
+  .staff-error-message,
+  .staff-loading {
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .staff-error-message {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+  }
+  
+  .staff-loading {
+    background-color: #f0f9ff;
+    color: #0c4a6e;
+    border: 1px solid #bae6fd;
+  }
+  

@@ -1,0 +1,212 @@
+/* Scoped modal styles with specific namespacing to avoid conflicts */
+
+.event-edit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  font-family: inherit;
+}
+
+.event-edit-modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.event-edit-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #e9eaec;
+  flex-shrink: 0;
+}
+
+.event-edit-modal-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #20242a;
+  margin: 0;
+}
+
+.event-edit-close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-edit-close-btn:hover {
+  color: #20242a;
+}
+
+.event-edit-modal-body {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.event-edit-form-group {
+  margin-bottom: 20px;
+}
+
+.event-edit-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #20242a;
+  margin-bottom: 8px;
+  margin: 0 0 8px 0;
+}
+
+.event-edit-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.event-edit-toggle-label input[type="checkbox"] {
+  margin: 0;
+  cursor: pointer;
+}
+
+.event-edit-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e9eaec;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #20242a;
+  background: white;
+  box-sizing: border-box;
+}
+
+.event-edit-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.event-edit-members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.event-edit-member-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Added styles for employee avatar in member chips */
+.event-edit-member-avatar {
+  flex-shrink: 0;
+}
+
+.event-edit-member-avatar-placeholder {
+  flex-shrink: 0;
+}
+
+.event-edit-member-chip button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #9ca3af;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+}
+
+.event-edit-member-chip button:hover {
+  color: #ef4444;
+}
+
+.event-edit-error-message {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.event-edit-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #e9eaec;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.event-edit-btn-cancel,
+.event-edit-btn-save {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.event-edit-btn-cancel {
+  background: #f0f0f0;
+  color: #20242a;
+}
+
+.event-edit-btn-cancel:hover {
+  background: #e5e5e5;
+}
+
+.event-edit-btn-save {
+  background: #2563eb;
+  color: white;
+}
+
+.event-edit-btn-save:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.event-edit-btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

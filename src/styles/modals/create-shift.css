@@ -1,0 +1,603 @@
+.create-shift-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-shift-modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  animation: slideUp 0.3s ease-out;
+}
+
+.create-shift-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+  background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.create-shift-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+.create-shift-close-btn {
+  background: #f5f5f5;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.create-shift-close-btn:hover {
+  background: #e5e5e5;
+  color: #333;
+  transform: scale(1.05);
+}
+
+.create-shift-close-btn:active {
+  transform: scale(0.95);
+}
+
+.create-shift-modal-body {
+  padding: 28px;
+  flex: 1 1 auto;
+  overflow: auto;
+  position: relative;
+  max-height: calc(100vh - 180px);
+}
+
+/* Custom scrollbar */
+.create-shift-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.create-shift-modal-body::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.create-shift-modal-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.create-shift-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.create-shift-modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 20px 28px;
+  border-top: 1px solid #f0f0f0;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  background: #fafafa;
+  border-radius: 0 0 16px 16px;
+}
+
+.create-shift-error-message {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+  border: 1px solid #ffcccc;
+  color: #d32f2f;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.create-shift-error-message::before {
+  content: "⚠";
+  font-size: 18px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-shift-success-message {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.create-shift-success-message::before {
+  content: "✓";
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.create-shift-form-group {
+  margin-bottom: 24px;
+}
+
+.create-shift-form-group label {
+  /* display: block; */
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  letter-spacing: -0.1px;
+}
+
+.create-shift-required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.create-shift-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+
+.create-shift-input:hover {
+  border-color: #d0d0d0;
+  background: #ffffff;
+}
+
+.create-shift-input:focus {
+  outline: none;
+  border-color: #0088ff;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 136, 255, 0.1);
+}
+
+.create-shift-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.create-shift-radio-group {
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+}
+
+.create-shift-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.create-shift-radio-label:hover {
+  background: #f5f5f5;
+}
+
+.create-shift-radio-label input[type="radio"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #0088ff;
+}
+
+.create-shift-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.create-shift-member-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.create-shift-member-checkbox:hover {
+  background: #f0f7ff;
+  border-color: #79c1ff;
+  transform: translateY(-1px);
+}
+
+.create-shift-member-checkbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #0088ff;
+}
+
+.create-shift-member-checkbox input[type="checkbox"]:checked + span {
+  font-weight: 600;
+  color: #0088ff;
+}
+
+.create-shift-member-checkbox:has(input[type="checkbox"]:checked) {
+  border-color: #0088ff;
+  background: #f0f7ff;
+  box-shadow: 0 2px 8px rgba(0, 136, 255, 0.15);
+}
+
+.create-shift-member-checkbox span {
+  font-size: 14px;
+  color: #333;
+}
+
+.create-shift-weekdays-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+.create-shift-weekday-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.create-shift-weekday-checkbox:hover {
+  border-color: #0088ff;
+  background: #f0f7ff;
+  transform: translateY(-1px);
+}
+
+.create-shift-weekday-checkbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #0088ff;
+}
+
+.create-shift-weekday-checkbox input[type="checkbox"]:checked + span {
+  font-weight: 600;
+  color: #0088ff;
+}
+
+.create-shift-weekday-checkbox:has(input[type="checkbox"]:checked) {
+  border-color: #0088ff;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 100%);
+  box-shadow: 0 2px 8px rgba(0, 136, 255, 0.2);
+}
+
+.create-shift-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.create-shift-toggle-label:hover {
+  background: #f5f5f5;
+}
+
+.create-shift-toggle-label input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  accent-color: #0088ff;
+}
+
+.create-shift-btn-cancel,
+.create-shift-btn-save {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: -0.2px;
+}
+
+.create-shift-btn-cancel {
+  background: #f5f5f5;
+  color: #666;
+  border: 2px solid #e5e5e5;
+}
+
+.create-shift-btn-cancel:hover {
+  background: #e5e5e5;
+  color: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-shift-btn-cancel:active {
+  transform: translateY(0);
+}
+
+.create-shift-btn-save {
+  background: linear-gradient(135deg, #0088ff 0%, #0066cc 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 136, 255, 0.3);
+}
+
+.create-shift-btn-save:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0077ee 0%, #0055bb 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 136, 255, 0.4);
+}
+
+.create-shift-btn-save:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.create-shift-btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #ccc;
+  box-shadow: none;
+}
+
+/* Event edit members list - shared styling */
+.event-edit-members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  min-height: 36px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 2px dashed #e5e5e5;
+}
+
+.event-edit-member-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 100%);
+  border: 2px solid #79c1ff;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #0088ff;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  animation: chipIn 0.2s ease-out;
+}
+
+@keyframes chipIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.event-edit-member-chip:hover {
+  box-shadow: 0 2px 8px rgba(0, 136, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.event-edit-member-chip button {
+  background: rgba(0, 136, 255, 0.1);
+  border: none;
+  color: #0088ff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 2px 6px;
+  margin-left: 4px;
+  line-height: 1;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.event-edit-member-chip button:hover {
+  background: rgba(0, 136, 255, 0.2);
+  color: #0066cc;
+  transform: scale(1.1);
+}
+
+.event-edit-member-chip button:active {
+  transform: scale(0.95);
+}
+
+.event-edit-member-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-edit-member-avatar-placeholder {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e5e5e5 0%, #d0d0d0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #666;
+  flex-shrink: 0;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-shift-hint {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #f97316;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #fff7ed;
+  border-radius: 8px;
+  border-left: 3px solid #f97316;
+}
+
+.create-shift-hint::before {
+  content: "ℹ";
+  font-weight: bold;
+}
+
+/* Ensure react-select dropdowns are visible above modal */
+.channel-select__menu,
+.member-select__menu {
+  z-index: 10000 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+  border: 2px solid #e5e5e5 !important;
+  overflow: hidden;
+}
+
+.channel-select__option:hover,
+.member-select__option:hover {
+  background: #f0f7ff !important;
+}
+
+.channel-select__option--is-selected,
+.member-select__option--is-selected {
+  background: #0088ff !important;
+}
+
+/* Additional enhancements for select inputs */
+select.create-shift-input {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  appearance: none;
+}
+
+/* Input focus states with better visual feedback */
+input[type="date"].create-shift-input,
+input[type="time"].create-shift-input {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input[type="date"].create-shift-input::-webkit-calendar-picker-indicator,
+input[type="time"].create-shift-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: opacity(0.5);
+  transition: all 0.2s ease;
+}
+
+input[type="date"].create-shift-input:hover::-webkit-calendar-picker-indicator,
+input[type="time"].create-shift-input:hover::-webkit-calendar-picker-indicator {
+  filter: opacity(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .create-shift-modal-content {
+    width: 95%;
+    max-width: none;
+    border-radius: 12px;
+  }
+  
+  .create-shift-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .create-shift-members-grid,
+  .create-shift-weekdays-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  
+  .create-shift-modal-header,
+  .create-shift-modal-body,
+  .create-shift-modal-footer {
+    padding: 20px;
+  }
+}

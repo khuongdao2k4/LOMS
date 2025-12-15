@@ -1,0 +1,113 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+  height: 96px;
+  margin: 0;
+  padding: 24px 32px 24px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9eaec;
+  z-index: 900;
+}
+
+/* Nhóm bên trái: logo + chữ LOMS */
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+/* Chữ LOMS bên cạnh logo TikTok */
+.header-logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  z-index: 1;
+}
+
+.tik-tok-png-logo-dad {
+  flex-shrink: 0;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-11/kGR8sQVxwE.png) no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.right-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 24px;
+  position: relative;
+  width: auto;
+  z-index: 3;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 8px;
+  position: relative;
+  width: 54px;
+  z-index: 4;
+}
+
+.avatar-woman {
+  flex-shrink: 0;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  z-index: 5;
+}
+
+.avatar-px {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-11/Y4C60T9hPD.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 6;
+  border-radius: 50%;
+}
+
+.chevron-down {
+  flex-shrink: 0;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-11/ScJx2mgm1T.png) no-repeat center;
+  background-size: cover;
+  z-index: 7;
+  /* Removed overflow: hidden to prevent dropdown clipping */
+}
+
+.header-user-dropdown {
+  z-index: 9000 !important;
+}

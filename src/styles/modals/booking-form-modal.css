@@ -1,0 +1,114 @@
+.booking-form-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.booking-form-modal__container {
+  width: min(520px, 95vw);
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.booking-form-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.booking-form-modal__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.booking-form-modal__subtitle {
+  margin: 4px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.booking-form-modal__close {
+  background: transparent;
+  border: none;
+  color: #e5e7eb;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.booking-form-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-form-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-form-modal__field label {
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.booking-form-modal__field input,
+.booking-form-modal__field textarea {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.booking-form-modal__field textarea {
+  resize: vertical;
+}
+
+.booking-form-modal__hint {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.booking-form-modal__error {
+  background: #7f1d1d;
+  color: #fee2e2;
+  border: 1px solid #b91c1c;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.booking-form-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.booking-form-modal__btn {
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.booking-form-modal__btn.primary {
+  background: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.booking-form-modal__btn.ghost {
+  background: transparent;
+}

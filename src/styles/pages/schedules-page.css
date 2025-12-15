@@ -1,0 +1,13 @@
+.schedules-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #ffffff;
+  }
+  
+  .schedules-page-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  

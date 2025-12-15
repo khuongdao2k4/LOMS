@@ -1,0 +1,225 @@
+/* ✅ Đã sửa để chỉ cuộn nội dung bảng */
+.flex-row-ea{
+  overflow: hidden;
+}
+.admin-booking__page {
+  flex: 1;
+  padding: 16px 20px 24px;
+  background: #f8fafc;
+  min-height: calc(100vh - 64px);
+  overflow: hidden; /* ✅ Thay đổi từ auto thành hidden */
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-booking__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-shrink: 0; /* ✅ Không cho header co lại */
+}
+
+.admin-booking__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.admin-booking__filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-shrink: 0; /* ✅ Không cho filters co lại */
+}
+
+.admin-booking__filters select,
+.admin-booking__filters input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  color: #0f172a;
+}
+
+.admin-booking__tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-shrink: 0; /* ✅ Không cho tabs co lại */
+}
+
+.admin-booking__tab {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admin-booking__tab.active {
+  background: #2563eb;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+.admin-booking__card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  flex: 1; /* ✅ Cho card chiếm hết không gian còn lại */
+  overflow: hidden; /* ✅ Ẩn phần tràn */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Thêm wrapper mới để cuộn */
+.admin-booking__table-wrapper {
+  flex: 1;
+  overflow-y: auto; /* ✅ Chỉ cuộn dọc */
+}
+
+.admin-booking__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-booking__table thead {
+  position: sticky; /* ✅ Giữ header cố định khi cuộn */
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+.admin-booking__table th,
+.admin-booking__table td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.admin-booking__table th {
+  font-weight: 600;
+  box-shadow: 0 1px 0 #e2e8f0; /* ✅ Thêm shadow cho header */
+}
+
+.admin-booking__badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.admin-booking__badge.pending {
+  border-color: #f59e0b;
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.admin-booking__badge.approved {
+  border-color: #10b981;
+  color: #047857;
+  background: #d1fae5;
+}
+
+.admin-booking__badge.rejected,
+.admin-booking__badge.cancelled {
+  border-color: #ef4444;
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.admin-booking__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.admin-booking__btn {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.admin-booking__btn.primary {
+  background: #2563eb;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+.admin-booking__btn.danger {
+  background: #ef4444;
+  border-color: #b91c1c;
+  color: #fff;
+}
+
+.admin-booking__empty {
+  padding: 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.admin-booking__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.admin-booking__pagination-info {
+  font-size: 14px;
+  color: #475467;
+}
+
+.admin-booking__pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-booking__pagination-btn,
+.admin-booking__pagination-page {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.admin-booking__pagination-btn:hover:not(:disabled),
+.admin-booking__pagination-page:hover:not(.admin-booking__pagination-page--active) {
+  border-color: #cbd5f5;
+  transform: translateY(-1px);
+}
+
+.admin-booking__pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-booking__pagination-page--active {
+  background: #2563eb;
+  border-color: #1e40af;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+}

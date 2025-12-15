@@ -1,0 +1,56 @@
+.login-banner {
+  flex: 1;
+  background: linear-gradient(135deg, #1e6fb5 0%, #164b8b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  color: white;
+}
+
+.banner-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.banner-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.banner-illustration {
+  margin-top: var(--spacing-xl);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-illustration svg {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .login-banner {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .login-banner {
+    display: none;
+  }
+}

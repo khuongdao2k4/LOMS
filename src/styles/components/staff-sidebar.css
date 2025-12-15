@@ -1,0 +1,130 @@
+.staff-sidebar {
+  position: sticky;
+  top: 0;
+  width: 240px;
+  min-height: calc(100vh - 72px);
+  background-color: #fff;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.staff-sidebar .frame-1 {
+  padding: 20px 0;
+}
+
+.staff-sidebar .frame-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-sidebar .frame-5 {
+  margin-bottom: 8px;
+}
+
+.staff-sidebar .frame-5 .ca-nhan-6 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 20px 8px;
+  display: block;
+}
+
+.staff-sidebar .menu-tab-7 {
+  margin: 4px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.staff-sidebar .menu-tab-7:hover {
+  background-color: #f9fafb;
+}
+
+.staff-sidebar .menu-8 {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.staff-sidebar .name-9 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.staff-sidebar .menu-label-sb {
+  font-size: 14px;
+  color: #4b5563;
+  font-weight: 500;
+  flex: 1;
+}
+
+.staff-sidebar .active-menu {
+  background-color: #eff6ff;
+  border-left: 3px solid #2563eb;
+  margin-left: 12px;
+  padding-left: 0;
+}
+
+.staff-sidebar .active-menu .menu-8 {
+  padding-left: 13px;
+}
+
+.staff-sidebar .active-menu .menu-label-sb {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+.sidebar-toggle-btn {
+  display: none;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .staff-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 240px;
+    transform: translateX(-100%);
+    z-index: 1000;
+    min-height: 100vh;
+    background: #fff;
+  }
+  .staff-sidebar.open {
+    transform: translateX(0);
+  }
+  .staff-sidebar.closed {
+    transform: translateX(-100%);
+    width: 0;
+    border-right: none;
+  }
+  .sidebar-toggle-btn {
+    display: inline-flex;
+    margin: 8px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 900;
+  }
+
+  /* Khi sidebar đóng, ẩn nội dung bên trong để không chiếm không gian */
+  .staff-sidebar.closed .frame-1 {
+    display: none;
+  }
+}

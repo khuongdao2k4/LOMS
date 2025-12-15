@@ -1,0 +1,546 @@
+/* ===== Trang chính ===== */
+.public-booking__page {
+  height: 100vh;
+  background: #020617;
+  color: #0f172a;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Top bar ===== */
+.public-booking__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* đẩy hết sang trái */
+  gap: 12px;                    /* cách nhau chút cho thoáng */
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.public-booking__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #e5e7eb;
+}
+
+.public-booking__topbar-center {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.public-booking__nav-btn {
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.public-booking__today-btn {
+  border-radius: 999px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #f9fafb;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.public-booking__week-label {
+  font-size: 16px;        /* ngày to hơn */
+  font-weight: 600;       /* đậm hơn */
+  color: #e5e7eb;
+  margin-left: 16px;      /* cách cụm nút xa hơn một tí */
+}
+
+
+/* ===== Layout 2 cột ===== */
+.public-booking__layout {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 0px;
+}
+
+/* ===== Sidebar ===== */
+.public-booking__sidebar {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 72px;
+  align-self: flex-start;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+  gap:5px;
+  margin-right: 10px;
+}
+
+.public-booking__host-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: #0b1120;
+  border-radius: 12px;
+  border: 1px solid #111827;
+}
+
+.public-booking__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.public-booking__host-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.public-booking__host-name {
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.public-booking__event-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f9fafb;
+}
+
+.public-booking__event-meta {
+  font-size: 12px;
+  color: #94a3b8;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.public-booking__mini-calendar {
+  background: #0b1120;
+  border-radius: 12px;
+  border: 1px solid #111827;
+  padding: 12px;
+  color: #e5e7eb;
+}
+
+/* Ẩn mini calendar cũ nhưng vẫn giữ code JSX */
+.public-booking__mini-calendar-legacy {
+  display: none;
+}
+
+.public-booking__note {
+  font-size: 12px;
+  color: #cbd5f5;
+  padding: 12px;
+  background: #0b1120;
+  border-radius: 12px;
+  border: 1px solid #111827;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  margin: 0 2px;
+}
+
+.pill-pending {
+  background: #f97316;
+  color: #111827;
+}
+
+.pill-approved {
+  background: #22c55e;
+  color: #052e16;
+}
+
+/* ===== MINI CALENDAR – giao diện giống Cal.com ===== */
+
+.mini-cal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mini-cal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.mini-cal__month-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.mini-cal__nav {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.mini-cal__nav-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-cal__nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.mini-cal__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.mini-cal__weekday {
+  text-align: center;
+}
+
+.mini-cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.mini-cal__day {
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  color: #e5e7eb;
+  font-size: 13px;
+}
+
+.mini-cal__day-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.mini-cal__day-number {
+  line-height: 1;
+}
+
+.mini-cal__today-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.mini-cal__day--empty {
+  background: transparent;
+}
+
+.mini-cal__day--disabled {
+  color: #4b5563;
+}
+
+.mini-cal__day--default {
+  background: transparent;
+}
+
+.mini-cal__day--available {
+  background: #1f2937;
+  cursor: pointer;
+}
+
+.mini-cal__day--available:hover {
+  background: #111827;
+}
+
+.mini-cal__day--selected {
+  background: #f9fafb;
+  color: #0f172a;
+  font-weight: 600;
+  cursor: default;
+}
+
+/* ===== Main right ===== */
+.public-booking__main {
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  padding: 8px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  color: #e5e7eb;
+}
+
+.public-booking__error {
+  color: #f87171;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.public-booking__toast {
+  color: #4ade80;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+/* ===== Calendar grid ===== */
+.public-cal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.public-cal__header-row {
+  display: grid;
+  grid-template-columns: 64px repeat(7, minmax(0, 1fr));
+  align-items: stretch;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 4px;
+}
+
+.public-cal__time-col-header {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.public-cal__day-header {
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 4px;
+}
+
+.public-cal__day-name {
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+.public-cal__day-date {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+/* body scroll */
+.public-cal__body {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Hàng 30 phút */
+.public-cal__row {
+  display: grid;
+  grid-template-columns: 64px repeat(7, minmax(0, 1fr));
+  min-height: 40px;
+}
+
+/* TIME COL & CELL – mặc định không có line ngang */
+.public-cal__time-col,
+.public-cal__cell {
+  border-top: 0;
+}
+
+/* Cột giờ – sáng, rõ */
+.public-cal__time-col {
+  font-size: 12px;
+  color: #e5e7eb;
+  font-weight: 500;
+  padding-right: 4px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+/* Cell 30p nền hơi sáng hơn nền tổng */
+.public-cal__cell {
+  position: relative;
+  border-left:unset;
+  background-color: #020617;
+  padding: 0;
+  pointer-events: none;
+}
+
+/* ==== TRẠNG THÁI Ô ==== */
+
+/* Ô có thể chọn (free) – nền xám xanh rõ ràng */
+.public-cal__cell--free {
+  cursor: pointer;
+  background-color: #555d6f;
+}
+
+.public-cal__cell--free:hover {
+  background-color: #111827;
+}
+
+/* Ô không thể chọn (ngoài khung / hết giờ / ngày khác) */
+.public-cal__cell--disabled {
+  background-color: #020617;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.85) 0px,
+    rgba(30, 41, 59, 0.85) 6px,
+    rgba(15, 23, 42, 1) 6px,
+    rgba(15, 23, 42, 1) 12px
+  );
+  opacity: 0.9;
+  cursor: default;
+}
+
+/* Ô đã có booking pending/approved – cùng style với disabled
+   để không bị lệch tone */
+.public-cal__cell--busy {
+  background-color: #020617;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.85) 0px,
+    rgba(30, 41, 59, 0.85) 6px,
+    rgba(15, 23, 42, 1) 6px,
+    rgba(15, 23, 42, 1) 12px
+  );
+  opacity: 0.9;
+  cursor: default;
+}
+
+/* ===== Slot overlay preview ===== */
+
+.public-cal__grid {
+  position: relative;
+  z-index: 1;
+}
+
+.public-cal__grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    transparent calc(100% - 1px),
+    #1f2937 calc(100% - 1px)
+  );
+  background-size: 100% calc(100% / 24);
+  background-repeat: repeat-y;
+}
+
+.public-cal__slot-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.public-cal__slot-overlay-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px repeat(7, minmax(0, 1fr));
+  height: 100%;
+}
+
+.public-cal__slot-overlay-time-col {
+  grid-column: 1 / 2;
+  pointer-events: none;
+}
+
+.public-cal__slot-overlay-day-col {
+  grid-column: span 1;
+  position: relative;
+  height: 100%;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.public-cal__busy-block {
+  position: absolute;
+  left: 0px;
+  right: 1.5px;
+  border-radius: 0;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(255, 255, 255, 0.05) 6px,
+    rgba(15, 23, 42, 0.95) 6px,
+    rgba(15, 23, 42, 0.95) 12px
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.public-cal__slot-block {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 8px;
+  border: 1px solid #1e3a8a;
+  background: linear-gradient(180deg, #fdfdfd, #eef2ff);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.35);
+  padding: 6px 10px;
+  pointer-events: none;
+}
+
+.public-cal__slot-block-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  background: rgba(15, 23, 42, 0.08);
+  padding: 2px 8px;
+  border-radius: 999px;
+  display: inline-flex;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .public-booking__page {
+    padding: 16px;
+  }
+
+  .public-booking__layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .public-booking__sidebar {
+    position: static;
+    max-height: none;
+    margin-bottom: 0px;
+  }
+
+  .public-booking__main {
+    margin-top: 16px;
+  }
+}

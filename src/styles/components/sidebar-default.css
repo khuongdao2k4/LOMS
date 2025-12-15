@@ -1,0 +1,170 @@
+.sidebar-default {
+  position: relative;
+  width: 280px;
+  height: 100%;
+  background: #ffffff;
+  border-right: 1px solid #e9eaec;
+  z-index: 9;
+  flex-shrink: 0;
+  transition: width 0.3s ease, margin-left 0.3s ease;
+}
+
+.sidebar-default.collapsed {
+  width: 0;
+  margin-left: 0;
+  border-right: none;
+  overflow: hidden;
+}
+
+.sidebar-collapse-btn {
+  position: absolute;
+  top: 16px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #e9eaec;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.collapse-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.collapse-toggle:hover {
+  color: #1f2937;
+}
+
+.frame-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100% !important;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  margin-left: 0px !important;
+  margin-top: 0px !important;
+}
+
+/* Thêm styling nền cho tất cả menu items khi active */
+.menu-tab-7.active-menu,
+.menu-tab-12.active-menu,
+.menu-tab-16.active-menu,
+.menu-tab-1a.active-menu {
+  background: #e6f2ff;
+  border-radius: 4px;
+}
+
+.menu-tab-7.active-menu .menu-8,
+.menu-tab-7.active-menu .menu-c,
+.menu-tab-12.active-menu .menu-13,
+.menu-tab-16.active-menu .menu-17,
+.menu-tab-1a.active-menu .menu-1b {
+  color: #111827;
+  font-weight: 700;
+}
+
+.menu-tab-7.active-menu .dashboard-a,
+.menu-tab-7.active-menu .dashboard-e,
+.menu-tab-12.active-menu .kenh,
+.menu-tab-16.active-menu .dashboard-15,
+.menu-tab-1a.active-menu .dashboard-19,
+.menu-tab-1a.active-menu .bao-cao-doanh-thu {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Thêm hover state - chỉ đổi màu text khi hover */
+.menu-tab-7:not(.active-menu):hover,
+.menu-tab-12:not(.active-menu):hover,
+.menu-tab-16:not(.active-menu):hover,
+.menu-tab-1a:not(.active-menu):hover {
+  background: #f9fafb;
+  border-radius: 4px;
+}
+
+.menu-tab-7:not(.active-menu):hover .dashboard-e,
+.menu-tab-12:not(.active-menu):hover .kenh,
+.menu-tab-16:not(.active-menu):hover .dashboard-15,
+.menu-tab-1a:not(.active-menu):hover .dashboard-19,
+.menu-tab-1a:not(.active-menu):hover .bao-cao-doanh-thu {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Added group toggle styles */
+.group {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.group-visible {
+  max-height: 500px;
+  opacity: 1;
+  padding: 16px;
+}
+
+.group-hidden {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 16px;
+}
+
+.group-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 8px;
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.group-toggle-btn:hover {
+  color: #1f2937;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-default.collapsed {
+    position: fixed;
+    left: -280px;
+  }
+
+  .sidebar-default {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.vuesax-outline-frame {
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-14/WyOKrkDyOb.png) no-repeat center !important;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  z-index: 39;
+}

@@ -1,0 +1,29 @@
+.login-page {
+  display: flex;
+  height: 100vh;
+  background: white;
+}
+
+/* Desktop - 2 cột */
+@media (min-width: 1024px) {
+  
+  .login-page {
+    display: flex;
+  }
+}
+
+/* Tablet - Ẩn banner */
+@media (max-width: 1023px) {
+  .login-page {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Mobile - Toàn bộ là form */
+@media (max-width: 640px) {
+  .login-page {
+    display: flex;
+    flex-direction: column;
+  }
+}

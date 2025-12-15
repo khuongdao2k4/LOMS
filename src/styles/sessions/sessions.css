@@ -1,0 +1,1253 @@
+﻿/* ================================================
+   SESSIONS & PAYROLL PAGE - COMPLETE STYLES
+   ================================================ */
+
+/* ===== Main Layout ===== */
+.quan-ly-kenh-main {
+  position: relative;
+  left: auto;
+  top: 0;
+  transform: none;
+  width: auto;
+  height: 100%;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.main-ss {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+/* ===== Header Section ===== */
+.header-kenh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 24px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9eaec;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.header-kenh .container {
+  flex: 1;
+}
+
+.header-kenh .heading {
+  margin-bottom: 8px;
+}
+
+.quan-ly-kenh-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.container-desc {
+  display: block;
+}
+
+.quan-ly-kenh-desc {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===== Content Container ===== */
+.container-kenh {
+  flex: 1;
+  height: auto;
+  width: 100%;
+  padding: 16px 24px 24px;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 100%;
+}
+
+/* ================================================
+     PAYROLL SUMMARY CARDS
+     ================================================ */
+.payroll-summary-cards {
+  display: flex;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e9eaec;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.summary-card-ss {
+  background: #f3f4f6;
+  padding: 20px 16px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card-highlight {
+  background:#f3f4f6 !important;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #000000;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+.summary-card-highlight .summary-label {
+  color: #000000;
+  font-weight: 600;
+}
+
+.summary-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.summary-hours {
+  color: #1f2937;
+}
+
+.summary-revenue {
+  color: #000000;
+}
+
+.summary-revenue-hour {
+  color: #8b5cf6;
+}
+
+.summary-salary {
+  color: #f59e0b;
+}
+
+.summary-total {
+  color: #ffffff;
+}
+
+/* ===== Search & Filter Section ===== */
+.horizontal-border {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e9eaec;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  flex-shrink: 0;
+  z-index: 20;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.container-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  z-index: 21;
+}
+
+/* ===== Payroll Filters ===== */
+.payroll-filters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  z-index: 22;
+}
+
+.payroll-date-filters {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  align-items: flex-end;
+  padding-left: 10px;
+}
+
+.date-input-group,
+.employee-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.date-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.date-input,
+.employee-input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1f2937;
+  background: #ffffff;
+  transition: all 0.2s;
+  min-width: 140px;
+}
+
+.employee-input {
+  min-width: 220px;
+}
+
+/* Employee select (react-select) */
+.employee-select__control {
+  height: 35px;
+  border-radius: 8px;
+  border-color: #dcdfe6;
+  box-shadow: none;
+}
+.employee-select__control:hover {
+  border-color: #409eff;
+}
+.employee-select__placeholder {
+  color: #9ca3af;
+}
+.employee-select__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.select-option .avatar,
+.select-value .avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #374151;
+}
+.select-option .avatar img,
+.select-value .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.select-option .row{
+  max-height: 35px;
+  padding: 0px !important;
+}
+
+.date-input:focus,
+.employee-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ===== Search Box (for channel page) ===== */
+.search-box {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-height: 40px;
+  width: 35%;
+}
+
+.input {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.nhap-id-kenh {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #1f2937;
+  font-family: inherit;
+}
+
+.nhap-id-kenh::placeholder {
+  color: #9ca3af;
+}
+
+.nhap-id-kenh:focus {
+  outline: none;
+}
+
+.container-search-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.symbol {
+  width: 16px;
+  height: 16px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>')
+    center / contain no-repeat;
+  color: #9ca3af;
+}
+
+/* ===== Button Actions ===== */
+.button-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+.button-search,
+.button-export,
+.button-add {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.button-search:hover,
+.button-export:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.button-search:disabled,
+.button-export:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-add {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.button-add:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.button-add:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #93c5fd;
+  border-color: #93c5fd;
+}
+
+.text-export,
+.text-add {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ===== Table Section ===== */
+.container-table-ss {
+  flex: 1 1 auto;
+
+  max-height: 70vh;
+  background: #ffffff;
+  width: 100%;
+  padding: 0 0 16px;
+  box-sizing: border-box;
+  border: 1px solid #e9eaec;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+.table {
+  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header-table {
+  flex-shrink: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e9eaec;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.header-table .row-ss {
+  display: grid;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e9eaec;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: var(--payroll-grid);
+  height: 60px;
+  z-index: 800;
+}
+
+/* ===== Table Cells - Channel Page (4 columns) ===== */
+.cell {
+  width: 100% !important;
+}
+.cell,
+.cell-name,
+.cell-date,
+.cell-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 13px;
+  flex: 0 0 25%;
+}
+
+/* ===== Payroll Table Columns (now 9 columns) ===== */
+.payroll-table {
+  --payroll-grid: 1.2fr 120px 1.2fr 1.2fr 0.9fr 0.9fr 0.8fr 1.1fr 0.6fr;
+}
+
+.payroll-table-header,
+.payroll-table-row {
+  display: grid;
+  grid-template-columns: var(--payroll-grid);
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.payroll-table-header {
+  padding: 12px 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.payroll-col-employee,
+.payroll-col-date,
+.payroll-col-channel,
+.payroll-col-shift,
+.payroll-col-scheduled,
+.payroll-col-hours,
+.payroll-col-role,
+.payroll-col-revenue,
+.payroll-col-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.payroll-col-employee,
+.payroll-col-date,
+.payroll-col-channel,
+.payroll-col-shift,
+.payroll-col-scheduled,
+.payroll-col-hours,
+.payroll-col-role,
+.payroll-col-revenue,
+.payroll-col-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ===== Table Data Rows ===== */
+.body-table {
+  flex: 1;
+  min-height: 300px;
+  width: 100%;
+}
+
+.payroll-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px 0;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 12px;
+}
+
+.payroll-pagination-info {
+  font-size: 14px;
+  color: #475467;
+}
+
+.payroll-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.payroll-pagination-btn,
+.payroll-pagination-page {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.payroll-pagination-btn:hover:not(:disabled),
+.payroll-pagination-page:hover:not(.payroll-pagination-page--active) {
+  border-color: #cbd5f5;
+  transform: translateY(-1px);
+}
+
+.payroll-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payroll-pagination-page--active {
+  background: #2563eb;
+  border-color: #1e40af;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+}
+
+.row-data-ss {
+  display: grid;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.2s;
+}
+
+.row-data:hover {
+  background: #f9fafb;
+}
+
+/* Channel page data columns */
+.data-col,
+.data-col-name,
+.data-col-date,
+.data-col-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1f2937;
+  font-size: 14px;
+  flex: 0 0 23%;
+}
+
+.data-col-date {
+  flex: 0 0 26% !important;
+}
+
+.data-col-action {
+  flex: 0 0 25% !important;
+  gap: 10px;
+}
+
+.channel-id {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.channel-name {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.channel-date {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== Payroll Table Data Styling ===== */
+.payroll-hours-value {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.payroll-salary-value {
+  color: #10b981;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.payroll-role-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: inline-block;
+}
+
+.role-livestreamer {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.role-support {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ===== Action Buttons ===== */
+.button-edit,
+.button-2d {
+  padding: 6px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.button-edit:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.button-2d:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.button-edit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.svg-edit,
+.svg-2e {
+  width: 16px;
+  height: 16px;
+}
+
+.svg-edit {
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-13/NyGbkiSwkK.png)
+    no-repeat center;
+  flex-shrink: 0;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  z-index: 100;
+}
+
+.svg-2e {
+  flex-shrink: 0;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-13/XO4ObpC6rY.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 100;
+}
+
+/* ===== Pagination ===== */
+.horizontal-border-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: #ffffff;
+  border-top: 1px solid #e9eaec;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.container-pagination-info {
+  flex: 1;
+}
+
+.pagination-text {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.container-pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.button-prev,
+.button-next,
+.button-page,
+.button-page-active {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+}
+
+.button-page-active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.button-prev:hover:not(:disabled),
+.button-next:hover:not(:disabled),
+.button-page:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.button-prev:disabled,
+.button-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.container-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.symbol-prev::before {
+  content: "<";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.symbol-next::before {
+  content: ">";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ===== Modal Styles ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modal-content-cn {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 460px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #1f2937;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.form-error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: #fee2e2;
+  border-radius: 4px;
+  border-left: 3px solid #dc2626;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+}
+
+.btn-cancel,
+.btn-submit {
+  padding: 10px 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.btn-cancel {
+  background: white;
+  color: #374151;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.btn-submit {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.btn-delete {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.btn-delete:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.btn-cancel:disabled,
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Utility Classes ===== */
+.dashboard-e {
+  color: black;
+  font-weight: normal;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1400px) {
+  .payroll-summary-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .payroll-table {
+    --payroll-grid: 1.05fr 100px 1.05fr 1.05fr 0.75fr 0.75fr 0.7fr 1fr 0.6fr;
+  }
+
+  .payroll-table-header,
+  .payroll-table-row {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-box {
+    width: 250px;
+  }
+
+  .payroll-summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .summary-value {
+    font-size: 24px;
+  }
+
+  .payroll-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .payroll-date-filters {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .date-input,
+  .employee-input {
+    min-width: 120px;
+  }
+
+  .button-actions {
+    width: 100%;
+  }
+
+  .payroll-table-header,
+  .payroll-table-row {
+    min-width: 1000px;
+  }
+}
+@media (max-width: 768px) {
+  .header-kenh {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .container-search {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .payroll-summary-cards {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .summary-card-ss {
+    padding: 16px;
+  }
+
+  .summary-value {
+    font-size: 22px;
+  }
+
+  .payroll-date-filters {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .date-input,
+  .employee-input {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .button-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .button-search,
+  .button-export,
+  .button-add {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .row,
+  .row-data-ss {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .header-table .row-ss {
+    padding: 12px 16px;
+  }
+  .row{
+    height: 32px !important;
+  }
+  .cell,
+  .cell-name,
+  .cell-date,
+  .cell-action,
+  .data-col,
+  .data-col-name,
+  .data-col-date,
+  .data-col-action {
+    font-size: 12px;
+  }
+
+  .modal-content-cn {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .horizontal-border-pagination {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-kenh {
+    padding: 12px;
+  }
+
+  .horizontal-border {
+    padding: 12px;
+  }
+
+  .container-search {
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .payroll-summary-cards {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .summary-card-ss {
+    padding: 12px;
+  }
+
+  .summary-label {
+    font-size: 10px;
+  }
+
+  .summary-value {
+    font-size: 20px;
+  }
+
+  .button-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .button-search,
+  .button-export,
+  .button-add {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .row,
+  .row-data-ss {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .modal-content-cn {
+    width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .modal-header h2 {
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+  }
+
+  .cell,
+  .cell-name,
+  .cell-date,
+  .cell-action,
+  .data-col,
+  .data-col-name,
+  .data-col-date,
+  .data-col-action {
+    font-size: 10px;
+  }
+
+  .horizontal-border-pagination {
+    padding: 8px 12px;
+  }
+
+  .pagination-text {
+    font-size: 11px;
+  }
+
+  .button-prev,
+  .button-next,
+  .button-page,
+  .button-page-active {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-width: 28px;
+    height: 28px;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .header-kenh,
+  .horizontal-border,
+  .button-actions,
+  .data-col-action,
+  .payroll-col-action,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .payroll-summary-cards {
+    page-break-after: avoid;
+  }
+
+  .body-table {
+    page-break-inside: avoid;
+  }
+
+  .container-kenh {
+    overflow: visible;
+  }
+}

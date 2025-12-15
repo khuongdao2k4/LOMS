@@ -1,0 +1,391 @@
+.booking-config__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.booking-config__panel {
+  width: min(960px, 95vw);
+  background: #ffffff;
+  color: #111827;
+  border-radius: 14px;
+  padding: 20px 20px 16px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+  position: relative;
+}
+
+
+.booking-config__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.booking-config__header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.booking-config__sub {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.booking-config__close {
+  background: transparent;
+  color: #000000;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.booking-config__success {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #ecfdf3;      /* nền xanh nhạt */
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 13px;
+}
+
+.booking-config__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-config__row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-config__row label {
+  color: #374151;
+  font-size: 13px;
+}
+
+.booking-config__row select,
+.booking-config__row input {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #111827;
+  font-size: 14px;
+}
+
+.booking-config__row input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+.booking-config__row.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.booking-config__schedule-card {
+  background: #0b0d12;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 12px 14px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.booking-config__day-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #1f2937;
+}
+
+.booking-config__day-row:last-child {
+  border-bottom: none;
+}
+
+.booking-config__day-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.booking-config__day-label {
+  font-weight: 600;
+}
+
+.booking-config__slots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-config__slots.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.booking-config__slot-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-config__slot-row input[type="time"] {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #111827;
+  min-width: 120px;
+}
+
+
+.booking-config__dash {
+  color: #6b7280;
+}
+
+.booking-config__icon-btn {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-config__icon-btn:hover {
+  background: #e5e7eb;
+}
+
+.booking-config__icon-btn.danger {
+  color: #f87171;
+  border-color: #b91c1c;
+}
+
+.booking-config__copy-wrapper {
+  position: relative;
+}
+
+.booking-config__copy-popover {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 12px;
+  width: 220px;
+  z-index: 10;
+  box-shadow: 0 15px 30px rgba(148, 163, 184, 0.4);
+}
+
+.booking-config__copy-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.booking-config__copy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.booking-config__copy-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #050505;
+  font-size: 14px;
+}
+
+.booking-config__copy-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.booking-config__copy-actions button {
+  background: #959aa6;
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.booking-config__copy-actions button.primary {
+  background: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.booking-config__loading {
+  padding: 12px;
+  color: #cbd5e1;
+}
+
+.booking-config__link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-config__link-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.booking-config__link-row input {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #111827;
+}
+
+.booking-config__btn {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+
+.booking-config__btn.primary {
+  background: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.booking-config__btn.ghost {
+  background: transparent;
+}
+
+.booking-config__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.booking-config__error {
+  background: #7f1d1d;
+  border: 1px solid #b91c1c;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #fee2e2;
+  font-size: 14px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #afb3b9;
+  transition: 0.3s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 3px;
+  background-color: rgb(36, 34, 34);
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #2563eb;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+
+/* ===== Light theme cho phần danh sách khung giờ ===== */
+
+/* Card chứa các ngày (Sunday → Saturday) */
+.booking-config__schedule-card {
+  background: #f9fafb;          /* hoặc #ffffff nếu muốn trắng hẳn */
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+/* Mỗi hàng ngày trong tuần */
+.booking-config__day-row {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.booking-config__day-row:last-child {
+  border-bottom: none;
+}
+
+/* Label tên ngày (Sunday, Monday, …) */
+.booking-config__day-label {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Các ô chọn giờ (nếu chưa chỉnh) */
+.booking-config__slot-row input[type="time"] {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #111827;
+  min-width: 120px;
+}
+
+/* Dấu gạch nối giữa hai ô giờ */
+.booking-config__dash {
+  color: #6b7280;
+}
+.booking-config__icon-btn.danger {
+  border: none;              
+  background: transparent;   
+  color: #ef4444;            
+  box-shadow: none;
+}
+
+.booking-config__icon-btn.danger:hover {
+  background: #fee2e2;     
+}

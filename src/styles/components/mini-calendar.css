@@ -1,0 +1,101 @@
+.mini-calendar-container {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mini-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    background: none;
+  }
+  
+  .mini-calendar-month {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+  
+  .mini-calendar-nav {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .mini-calendar-btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  
+  .mini-calendar-btn:hover {
+    background: #e0e0e0;
+  }
+  
+  .mini-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+  
+  .mini-calendar-weekday {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    padding: 4px 0;
+  }
+  
+  .mini-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  
+  .mini-calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .mini-calendar-day.empty {
+    cursor: default;
+    color: #ccc;
+  }
+  
+.mini-calendar-day.active {
+    color: #333;
+    background: #f6f8fb;
+  }
+
+  /* Add styling for today's date with blue circle highlight */
+  .mini-calendar-day.today {
+    background: #1f7bff;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(31, 123, 255, 0.25);
+    border: 1px solid rgba(31, 123, 255, 0.9);
+  }
+
+  .mini-calendar-day.active:hover {
+    background: #57a2ff;
+    color: white;
+  }
+  
